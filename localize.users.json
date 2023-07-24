@@ -1,0 +1,35 @@
+[{
+  "_id": {
+    "$oid": "64be078426503170806f61bb"
+  },
+  "password": "user1p@ss",
+  "email": "user1@gmail.com"
+},
+{
+  "_id": {
+    "$oid": "64be07c426503170806f61bc"
+  },
+  "password": "user2p@ss",
+  "email": "user2@gmail.com"
+},
+{
+  "_id": {
+    "$oid": "64be080826503170806f61bd"
+  },
+  "password": "user3p@ss",
+  "email": "user3@gmail.com"
+},
+{
+  "_id": {
+    "$oid": "64be083626503170806f61be"
+  },
+  "password": "user4p@ss",
+  "email": "user4@gmail.com"
+},
+{
+  "_id": {
+    "$oid": "64be085726503170806f61bf"
+  },
+  "password": "user5p@ss",
+  "email": "user5@gmail.com"
+}]

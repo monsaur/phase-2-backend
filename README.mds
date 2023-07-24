@@ -6,7 +6,7 @@ CCAPDEV Phase 2 - GROUP 14
 Instructions:
 1. Type "npm run dev" in the VScode terminal
 2. Go to any browser and type "localhost:3000"
-3. The website will only accept entries in the database. 
+3. The website will only accept entries in the database named "localize" with collection "users". 
    Sample email and passwords that can be entered are listed below:
 
    email: user1@gmail.com
