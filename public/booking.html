@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create a Listing</title>
+  <!--- website icon --->
+  <link rel="shortcut icon" href="./assets/images/logo/localize_icon.png" type="image/x-icon">
+  <!--- css link--->
+  <link rel="stylesheet" href="./css/listings.css">
+  <!--- google fonts --->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* Add your custom CSS styles here */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 200px;
+      border: 1px solid #ddd;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 8px 12px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay" data-overlay></div>
+  <!--- HEADER --->
+  <header>
+    <div class="header-top">
+      <div class="container">
+        <ul class="header-social-container">
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+        </ul>
+        <div class="header-alert-news">
+          <p>
+            <b>10% Discount</b>
+            Use code 'localize' for discounts on your bookings
+          </p>
+        </div>
+        <div class="header-top-actions">
+          <select name="currency">
+            <option value="php">PHP &#8369;</option>
+            <option value="usd">USD &dollar;</option>
+          </select>
+          <select name="language">
+            <option value="en-US">English</option>
+            <option value="fil">Filipino</option>
+          </select>
+          <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+      </div>
+    </div>
+    <div class="header-main">
+      <div class="container">
+        <a href="#" class="header-logo">
+          <img src="./assets/images/logo/localize_logo.png" alt="Localize Logo" width="150" height="30">
+        </a>
+        <div class="header-search-container">
+          <input type="search" id="searchInput" name="search" class="search-field" placeholder="Search for a service..">
+          <button class="search-btn" onclick="search()">
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+        </div>
+        <div class="header-user-actions">
+          <button class="action-btn">
+            <ion-icon name="person-outline"></ion-icon>
+          </button>
+          <button class="action-btn">
+            <ion-icon name="heart-outline"></ion-icon>
+            <span class="count">0</span>
+          </button>
+          <button class="action-btn">
+            <ion-icon name="bag-handle-outline"></ion-icon>
+            <span class="count">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="desktop-navigation-menu">
+      <div class="container">
+        <ul class="desktop-menu-category-list">
+          <li class="menu-category">
+            <a href="homepage.html" class="menu-title">Home</a>
+          </li>
+          <li class="menu-category">
+            <a href="listings.html" class="menu-title">Service Listings</a>
+          </li>
+          <li class="menu-category">
+            <a href="create_listing.html" class="menu-title">Create a Listing</a>
+          </li>
+          <li class="menu-category">
+            <a href="delete-listings.html" class="menu-title">View My Listings</a>
+          </li>
+        </ul>
+        <button class="nav_toggle">
+          <span class="nav_toggle-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <!-- MAIN -->
+  <main>
+    <!-- Main content goes here -->
+    <div class="booking-container">
+      <h2>Book an Appointment</h2>
+      <form id="booking-form" onsubmit="return validateForm()">
+        <div class="form-group">
+          <label for="service">Service:</label>
+          <div class="dropdown">
+            <input type="search" id="serviceSearch" placeholder="Search for a service..." oninput="filterServices()" required>
+            <div class="dropdown-content">
+              <a href="#" onclick="selectService('Service 1')">Dog Grooming</a>
+              <a href="#" onclick="selectService('Service 2')">Aromatheraphy Massage</a>
+              <a href="#" onclick="selectService('Service 3')">Smartphone Repair</a>
+              <a href="#" onclick="selectService('Service 4')">Tire Vulcanizing</a>
+              <a href="#" onclick="selectService('Service 5')">Hairdressing</a>
+              <!-- Add more service options here -->
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+          <label for="time">Time:</label>
+          <input type="time" id="time" name="time" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message"></textarea>
+        </div>
+        <button type="submit">Book Appointment</button>
+      </form>
+    </div>
+  </main>
+  
+  <!-- Pop-up message and Back to Home button -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <h3>Successfully Booked!</h3>
+      <button onclick="backToHome()">Back to Home</button>
+    </div>
+  </div>
+
+  <script>
+    function filterServices() {
+      const input = document.getElementById("serviceSearch");
+      const filter = input.value.toUpperCase();
+      const dropdownContent = document.querySelector(".dropdown-content");
+      const services = dropdownContent.getElementsByTagName("a");
+
+      for (let i = 0; i < services.length; i++) {
+        const serviceName = services[i].textContent || services[i].innerText;
+        if (serviceName.toUpperCase().indexOf(filter) > -1) {
+          services[i].style.display = "";
+        } else {
+          services[i].style.display = "none";
+        }
+      }
+    }
+
+    function selectService(service) {
+      const input = document.getElementById("serviceSearch");
+      input.value = service;
+    }
+
+    function validateForm() {
+      const form = document.getElementById('booking-form');
+      const inputs = form.querySelectorAll('input, select');
+      let isValid = true;
+
+      inputs.forEach((input) => {
+        if (!input.value) {
+          isValid = false;
+          input.classList.add('error');
+        } else {
+          input.classList.remove('error');
+        }
+      });
+
+      if (isValid) {
+        showPopup();
+      }
+
+      return false; // Prevent form submission
+    }
+
+    function showPopup() {
+      const popup = document.getElementById("popup");
+      const form = document.getElementById("booking-form");
+
+      popup.style.display = "block";
+      form.classList.add("disabled");
+    }
+
+    function backToHome() {
+      window.location.href = "homepage.html";
+    }
+  </script>
+</body>
+</html>

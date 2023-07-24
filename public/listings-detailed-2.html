@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Service Listings</title>
+
+  <!--- website icon --->
+  <link rel="shortcut icon" href="./assets/images/logo/localize_icon.png" type="image/x-icon">
+
+  <!--- css link--->
+  <link rel="stylesheet" href="./css/listings.css">
+  <link rel="stylesheet" href="./css/listings-detailed.css">
+
+  <!--- google fonts --->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+
+
+  <div class="overlay" data-overlay></div>
+
+
+  <!--- HEADER --->
+
+  <header>
+
+    <div class="header-top">
+
+      <div class="container">
+
+        <ul class="header-social-container">
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="header-alert-news">
+          <p>
+            <b>10% Discount</b>
+            Use code 'localize' for discounts on your bookings
+          </p>
+        </div>
+
+        <div class="header-top-actions">
+
+          <select name="currency">
+
+            <option value="php">PHP &#8369;</option>
+            <option value="usd">USD &dollar;</option>
+
+          </select>
+
+          <select name="language">
+
+            <option value="en-US">English</option>
+            <option value="fil">Filipino</option>
+            
+
+          </select>
+<button class="logout-btn" onclick="logout()">Logout</button> <!-- New Logout button -->
+       
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="header-main">
+
+      <div class="container">
+
+        <a href="#" class="header-logo">
+          <img src="./assets/images/logo/localize_logo.png" alt="Localize Logo" width="150" height="30">
+        </a>
+
+        <div class="header-search-container">
+
+          <input type="search" id="searchInput" name="search" class="search-field" placeholder="Search for a service..">
+
+          <button class="search-btn" onclick="search()">
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+
+        </div>
+
+        <div class="header-user-actions">
+
+          <button class="action-btn">
+            <ion-icon name="person-outline"></ion-icon>
+          </button>
+
+          <button class="action-btn">
+            <ion-icon name="heart-outline"></ion-icon>
+            <span class="count">0</span>
+          </button>
+
+          <button class="action-btn">
+            <ion-icon name="bag-handle-outline"></ion-icon>
+            <span class="count">0</span>
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+<nav class="desktop-navigation-menu">
+
+      <div class="container">
+
+        <ul class="desktop-menu-category-list">
+
+          <li class="menu-category">
+            <a href="homepage.html" class="menu-title">Home</a>
+          </li>
+
+           <li class="menu-category">
+            <a href="listings.html" class="menu-title">Service Listings</a>
+          </li>
+
+           <li class="menu-category">
+            <a href="create_listing.html" class="menu-title">Create a Listing</a>
+          </li>
+
+           <li class="menu-category">
+            <a href="delete-listings.html" class="menu-title">View My Listings</a>
+          </li>
+
+              </ul>
+ <button class="nav_toggle">
+    <span class="nav_toggle-icon"></span>
+  </button>
+
+      </div>
+</nav>
+
+  </header>
+    
+
+
+
+
+  <!--
+    - MAIN
+  -->
+
+  <main>
+
+<!-- DETAILS --> 
+
+<div class = "card-wrapper">
+    <div class = "card">
+      <!-- card left -->
+      <div class = "product-imgs">
+        <div class = "img-display">
+          <div class = "img-showcase">
+            <img src = "assets/images/services/2.png" alt = "aromatherapy">
+            <img src = "assets/images/services/2.png" alt = "aromatherapy">
+            <img src = "assets/images/services/2.png" alt = "aromatherapy">
+            <img src = "assets/images/services/2.png" alt = "aromatherapy">
+          </div>
+        </div>
+        <div class = "img-select">
+          <div class = "img-item">
+            <a href = "#" data-id = "1">
+                <img src = "assets/images/services/2.png" alt = "aromatherapy">
+            </a>
+          </div>
+          <div class = "img-item">
+            <a href = "#" data-id = "2">
+                <img src = "assets/images/services/2.png" alt = "aromatherapy">
+            </a>
+          </div>
+          <div class = "img-item">
+            <a href = "#" data-id = "3">
+                <img src = "assets/images/services/2.png" alt = "aromatherapy">
+            </a>
+          </div>
+          <div class = "img-item">
+            <a href = "#" data-id = "4">
+                <img src = "assets/images/services/2.png" alt = "aromatherapy">
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- card right -->
+      <div class = "product-content">
+        <h2 class = "product-title">Aromatheraphy Massage</h2>
+        <div class = "product-rating">
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star-outline"></ion-icon>
+            <ion-icon name="star-outline"></ion-icon>
+          <span>3.0(21)</span>
+        </div>
+
+        <div class = "product-price">
+          <p>Old Price: <span>₱56.00</span></p>
+          <p class = "new-price">New Price: <span>₱45.00</span></p>
+        </div>
+
+        <div class="service-provider">
+          <p> Service Provider: The Tranquility Spa Co.</p>
+          <p> Address: 456 Oak Avenue, Somewhereville, Philippines</p>
+        </div>
+
+        <div class = "product-detail">
+          <h2>about this Service: </h2>
+          <p>Indulge in a rejuvenating aromatherapy massage experience that soothes your senses and uplifts your spirit. Our skilled 
+            therapists combine the healing power of touch with the aromatic essence of natural oils, creating a blissful and personalized 
+            treatment. Immerse yourself in a tranquil oasis, where stress melts away, and relaxation takes center stage, leaving you 
+            refreshed, revitalized, and harmoniously balanced.</p>
+          
+        </div>
+
+        <div class = "purchase-info">
+        
+          <button type = "button" class = "btn">
+            Book Now <i class = "fas fa-shopping-cart"></i>
+          </button>
+        </div>
+
+        <div class = "social-links">
+          <a href = "#">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+          <a href = "#">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+          <a href = "#">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href = "#">
+            <ion-icon name="call"></ion-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  </main>
+    
+
+  
+
+
+
+  <!--
+    - FOOTER
+  -->
+
+  <footer>
+
+    
+
+    <div class="footer-nav">
+
+      <div class="container">
+
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Popular Categories</h2>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Repairs</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Healthcare</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Pets</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Personal Care</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-nav-list">
+        
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Whats new</h2>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Price drop</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">New Services</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Discounts</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Contact us</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Sitemap</a>
+          </li>
+        
+        </ul>
+
+        <ul class="footer-nav-list">
+        
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Our Company</h2>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Legal Notice</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Terms and conditions</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">About us</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Secure payment</a>
+          </li>
+        
+        </ul>
+
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Contact</h2>
+          </li>
+
+          <li class="footer-nav-item flex">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <address class="content">
+              2401 Taft Ave, Malate, Manila, 1004 Metro Manila
+            </address>
+          </li>
+
+          <li class="footer-nav-item flex">
+            <div class="icon-box">
+              <ion-icon name="call-outline"></ion-icon>
+            </div>
+
+            <a href="tel:+607936-8058" class="footer-nav-link">(02) 8524 4611</a>
+          </li>
+
+          <li class="footer-nav-item flex">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <a href="example@dlsu.edu.ph" class="footer-nav-link">example@dlsu.edu.ph</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Follow Us</h2>
+          </li>
+
+          <li>
+            <ul class="social-link">
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <div class="container">
+
+        <img src="./assets/images/payment.png" alt="payment method" class="payment-img">
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!--
+    - custom js link
+  -->
+  <script src="./js/listings.js"></script>
+  <script src="./js/listings-detailed.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
