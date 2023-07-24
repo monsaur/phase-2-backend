@@ -1,0 +1,25 @@
+CCAPDEV Phase 2 - GROUP 14
+1. 
+2.
+3.
+
+Instructions:
+1. Type "npm run dev" in the VScode terminal
+2. Go to any browser and type "localhost:3000"
+3. The website will only accept entries in the database. 
+   Sample email and passwords that can be entered are listed below:
+
+   email: user1@gmail.com
+   password: user1p@ss
+
+   email: user2@gmail.com
+   password: user2p@ss
+
+   email: user3@gmail.com
+   password: user3p@ss
+
+   email: user4@gmail.com
+   password: user4p@ss
+
+   email: user5@gmail.com
+   password: user5p@ss
